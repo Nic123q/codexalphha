@@ -299,12 +299,22 @@ export class MemStorage implements IStorage {
 
     sampleGames.forEach(game => {
       const id = this.gameId++;
-      this.games.set(id, { ...game, id });
+      this.games.set(id, { 
+        ...game, 
+        id,
+        releaseDate: game.releaseDate || null,
+        isUpcoming: game.isUpcoming || false,
+        developer: game.developer || null,
+        publisher: game.publisher || null,
+        platform: game.platform || null,
+        screenshots: game.screenshots || null,
+        features: game.features || null
+      });
     });
   }
 
   private initializeComments() {
-    const cyberpunkComments: InsertComment[] = [
+    const cyberpunkComments = [
       {
         gameId: 1,
         author: "João Dimas",
@@ -325,7 +335,7 @@ export class MemStorage implements IStorage {
       }
     ];
 
-    const witcherComments: InsertComment[] = [
+    const witcherComments = [
       {
         gameId: 2,
         author: "Amanda Rodrigues",
@@ -350,7 +360,12 @@ export class MemStorage implements IStorage {
       const id = this.commentId++;
       const date = new Date();
       date.setDate(date.getDate() - Math.floor(Math.random() * 14)); // Random date in last 2 weeks
-      this.comments.set(id, { ...comment, id, date });
+      this.comments.set(id, { 
+        ...comment, 
+        id, 
+        date, 
+        likes: comment.likes || 0 
+      });
     });
   }
 
@@ -409,7 +424,12 @@ export class MemStorage implements IStorage {
   async addComment(commentData: InsertComment): Promise<Comment> {
     const id = this.commentId++;
     const date = new Date();
-    const comment: Comment = { ...commentData, id, date, likes: 0 };
+    const comment: Comment = { 
+      ...commentData, 
+      id, 
+      date, 
+      likes: 0 
+    };
     this.comments.set(id, comment);
     return comment;
   }
@@ -426,7 +446,11 @@ export class MemStorage implements IStorage {
   // Contact operations
   async addContact(contactData: InsertContact): Promise<Contact> {
     const id = this.contactId++;
-    const contact: Contact = { ...contactData, id };
+    const contact: Contact = { 
+      ...contactData, 
+      id, 
+      newsletter: contactData.newsletter || false 
+    };
     this.contacts.set(id, contact);
     return contact;
   }

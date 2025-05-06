@@ -67,6 +67,7 @@ export const insertCommentSchema = createInsertSchema(comments).pick({
   gameId: true,
   author: true,
   content: true,
+  likes: true,
 });
 
 export const insertContactSchema = createInsertSchema(contacts).pick({
