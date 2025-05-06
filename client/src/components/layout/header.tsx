@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header className={`fixed w-full bg-black bg-opacity-90 backdrop-blur-md z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center flex-1 mr-14">
           <Link href="/">
             <h1 className="text-3xl md:text-4xl font-bold cursor-pointer">
               <span className="text-primary">C</span>
@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center justify-center space-x-8">
           <a href="#home" className="nav-link font-medium text-white hover:text-secondary transition-colors">
             Início
           </a>
