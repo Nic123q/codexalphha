@@ -58,7 +58,7 @@ const Header = () => {
           </a>
         </nav>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ml-14">
           <form onSubmit={handleSearchSubmit} className="relative">
             <input
               type="text"
