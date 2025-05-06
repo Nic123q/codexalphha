@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'wouter';
 import GameCard from '@/components/game-card';
 import { Game } from '@shared/schema';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -86,12 +87,11 @@ const GameSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="#"
-            className="inline-block px-8 py-3 bg-muted border border-secondary text-secondary text-lg rounded-full hover:bg-secondary hover:text-background transition-all duration-300 transform hover:scale-105"
-          >
-            Ver todos os jogos
-          </a>
+          <Link href="/games">
+            <span className="inline-block px-8 py-3 bg-muted border border-secondary text-secondary text-lg rounded-full hover:bg-secondary hover:text-background transition-all duration-300 transform hover:scale-105 cursor-pointer">
+              Ver todos os jogos
+            </span>
+          </Link>
         </div>
       </div>
     </section>

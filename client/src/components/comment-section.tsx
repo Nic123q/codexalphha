@@ -160,6 +160,10 @@ const GameComments = ({ game, comments, isLoading }: GameCommentsProps) => {
           src={game.imageUrl} 
           alt={game.title} 
           className="w-16 h-16 rounded-lg object-cover" 
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "https://placehold.co/200x200/313131/e2e2e2?text=Game";
+          }}
         />
         <div className="ml-4">
           <h3 className="text-2xl font-bold text-white">{game.title}</h3>
