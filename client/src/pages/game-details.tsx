@@ -30,6 +30,10 @@ const GameScreenshot = ({ image, alt, onClick }: GameScreenshotProps) => {
         src={image} 
         alt={alt} 
         className="w-full h-40 object-cover transform transition-transform duration-300 hover:scale-110" 
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = "https://placehold.co/800x450/313131/e2e2e2?text=Screenshot";
+        }}
       />
     </div>
   );
@@ -201,6 +205,10 @@ const GameDetailPage = () => {
                 src={game.imageUrl} 
                 alt={game.title} 
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://placehold.co/1280x720/313131/e2e2e2?text=Game";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
               <div className="absolute bottom-0 left-0 w-full p-6">
