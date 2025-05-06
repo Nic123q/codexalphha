@@ -18,6 +18,10 @@ export const games = pgTable("games", {
   releaseDate: text("release_date"),
   isUpcoming: boolean("is_upcoming").default(false),
   developer: text("developer"),
+  publisher: text("publisher"),
+  platform: text("platform"),
+  screenshots: text("screenshots").array(),
+  features: text("features").array(),
 });
 
 export const comments = pgTable("comments", {
@@ -53,6 +57,10 @@ export const insertGameSchema = createInsertSchema(games).pick({
   releaseDate: true,
   isUpcoming: true,
   developer: true,
+  publisher: true,
+  platform: true,
+  screenshots: true,
+  features: true,
 });
 
 export const insertCommentSchema = createInsertSchema(comments).pick({
