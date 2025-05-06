@@ -274,7 +274,7 @@ export class MemStorage implements IStorage {
         title: "Elden Ring: Shadow of the Erdtree",
         description: "A expansão aguardada do aclamado RPG de ação, trazendo novas áreas, chefes e desafios ao mundo das Terras Intermédias.",
         category: "RPG / Ação",
-        imageUrl: "https://cdn.akamai.steamstatic.com/steam/apps/2104541/header.jpg",
+        imageUrl: "https://sm.ign.com/ign_br/news/b/bioware-el/bioware-eliminates-50-jobs-to-match-studios-changing-needs_5jww.jpg",
         rating: "0.0",
         releaseDate: "Fevereiro 2024",
         isUpcoming: true,
